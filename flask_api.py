@@ -22,8 +22,29 @@ def home():
 def predict():
     file = request.files['file']
     data = pd.read_csv(file)
+    
+#defining required columns
+    required_columns =[
+        'recency',
+        'purchased_frequency',
+        'avg_order_value',
+        'total_spend',
+        'age',
+        'purchase_duration'
+    ]
 
-    features = data[['recency', 'purchase_frequency', 'avg_order_value', 'total_spend', 'purchase_duration']]
+    #checking for missing columns
+    missing_columns = [col for col in required_columns if col not in data.columns]
+    if missing_columns:
+        return f"""
+        <h2 style ='color:red;'> ❌ Error: The following required column(s) are missing from your file:</h2>
+        <ul>
+            {''.join(f'<li>{col}</li>' for col in missing_columns)}
+            </ul>
+            """
+        #selecting only the required features
+    features = data[['recency', 'purchase_frequency', 'avg_order_value', 'total_spend','age', 'purchase_duration']]
+    #Predict
     predictions = model.predict(features)
     data['cluster'] = predictions
     data['cluster_label'] = data['cluster'].map(cluster_labels)
