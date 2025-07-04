@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import os
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 #Loading my clustering model and label mapping
 model = joblib.load('customer_segmentation_model.pkl')
