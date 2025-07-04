@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, send_file
 import joblib
 import pandas as pd
 import numpy as np
@@ -16,7 +16,7 @@ cluster_labels = {
 
 @app.route('/')
 def home():
-    return "Customer Segmentation FlaskApi is running!"
+    return send_file('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
