@@ -26,7 +26,7 @@ def predict():
 #defining required columns
     required_columns =[
         'recency',
-        'purchased_frequency',
+        'purchase_frequency',
         'avg_order_value',
         'total_spend',
         'age',
