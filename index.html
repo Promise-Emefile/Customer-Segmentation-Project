@@ -111,12 +111,6 @@
             <button type="submit">Upload & Predict</button>
         </form>
 
-        {% if prediction_text %}
-            <div class="output">
-                <h3>{{ prediction_text }}</h3>
-                {{ prediction_result|safe }}
-            </div>
-        {% endif %}
 
         <!-- Single Customer Input -->
         <p class="link-text" onclick="toggleForm()">Looking for the segment of just one customer?</p>
@@ -145,11 +139,6 @@
             </form>
         </div>
 
-        {% if single_prediction %}
-            <div class="output">
-                <h3>{{ single_prediction }}</h3>
-            </div>
-        {% endif %}
 
         <div class="footer">
             &copy; 2025 Customer Segmentation Model
