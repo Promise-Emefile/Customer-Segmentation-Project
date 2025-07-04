@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>🧠 Customer Segmentation App</title>
+    <title>🧠 Customer Segmentation</title>
     <style>
         body {
             margin: 0;
@@ -83,8 +83,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>🧠 Customer Segmentation App</h1>
-        <p>Upload a customer CSV file to predict their segments using your clustering model.</p>
+        <h1>🧠 Customer Segmentation </h1>
+        <p>Upload a customer CSV file to predict their segments using KMeans clustering model.</p>
+        <p>Please Note that your csv file must contain the following features: Recency, Purchase_Frequency, Avg_order_value, Total_spend, Age, Purchased_frequency</p>
 
         <form action="/predict" method="post" enctype="multipart/form-data">
             <label>📩 Upload CSV File</label>
