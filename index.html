@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Segmentation</title>
+  </head>
+  <body>
+    <h2>Enter Customer Data</h2>
+    <form action="/predict" method="post">
+      <input type="text" name="Recency" placehoder="Feature1" required><br>
+      <input type="text" name="Purchase Frequency" placehoder="Feature2" required><br>
+      <input type="text" name="Average Order Value" placehoder="Feature3" required><br>
+      <input type="text" name="Total Spend" placehoder="Feature4" required><br>
+      <input type="text" name="Age" placehoder="Feature5" required><br>
+      <input type="text" name="Purchase Duration" placehoder="Feature1" required><br>
+      <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+  </body>
+</html>
