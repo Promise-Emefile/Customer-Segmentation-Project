@@ -16,7 +16,7 @@ cluster_labels = {
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return "Customer Segmentation FlaskApi is running!"
 
 @app.route('/predict', methods=['POST'])
 def predict():
