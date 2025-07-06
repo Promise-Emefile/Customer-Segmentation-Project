@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 #Loading my clustering model and label mapping
-model = joblib.load('customer_segmentation_model.pkl')
+model = joblib.load('Customer_segmentation_model.pkl')
 cluster_labels = {
     0: "High-Spending Loyal Customers",
     1: "New Low-Spending Buyers",
